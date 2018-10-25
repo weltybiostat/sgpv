@@ -1,10 +1,15 @@
 Package: sgpv
-Title: What the Package Does (one line, title case)
+Title: R package for calculating second-generation p-values and associated measures. 
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Valerie", "Welty", email = "valerie.welty@vanderbilt.edu", role = c("aut", "cre"))
+    person("Thomas", "Stewart", email = "thomas.stewart@vanderbilt.edu", role = "aut"),
+    person("Robert", "Greevy, Jr.", email = "robert.greevy@vanderbilt.edu", role = "aut"),
+    person("Lucy", "D'Agostino McGowan", email = "ld.mcgowan@jhu.edu", role = "aut"),
+    person("Jeffrey", "Blume", email = "j.blume@vanderbilt.edu", role = c("aut")
+    )
 Depends: R (>= 3.4.4)
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0.9000
