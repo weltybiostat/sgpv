@@ -6,7 +6,7 @@
 ##	Version:	1.1
 ##
 ##	Author:		Valerie F. Welty and Jeffrey D. Blume
-##	Date:		November 1, 2018
+##	Date:		November 8, 2018
 ################################################################
 #
 #' False Discovery Risk for Second-Generation p-values

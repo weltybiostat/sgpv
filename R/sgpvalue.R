@@ -5,7 +5,7 @@
 ##	Version:	2.1
 ##
 ##	Author:		Jeffrey D. Blume and Valerie F. Welty
-##	Date:		November 1, 2018
+##	Date:		November 8, 2018
 ################################################################
 #
 #' Second-Generation p-values
