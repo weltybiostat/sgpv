@@ -20,7 +20,7 @@ The `sgpvalue()` function calculates the second-generation p-value and delta-gap
 library(sgpv)
 lb = log(c(1.05, 1.3, 0.97))
 ub = log(c(1.8, 1.8, 1.02))
-sgpvalue(est.lo = lb, est.hi = ub, null.lo = rep(log(1/1.1), 3), null.hi = rep(log(1.1), 3))
+sgpvalue(est.lo = lb, est.hi = ub, null.lo = log(1/1.1), null.hi = log(1.1))
 
 # $p.delta
 # [1] 0.1220227 0.0000000 1.0000000
