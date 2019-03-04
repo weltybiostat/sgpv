@@ -82,8 +82,8 @@ fdrisk <- function(sgpval=0, null.lo, null.hi, std.err,
   P.sgpv.H1 = NULL  # `P.sgpv.H1` = P(SGPV=1 | H1 )
 
   ## Power functions
-  if(sgpval==0) {power = function(x) {sg.power(true = x, null.lo, null.hi, std.err, interval.type, interval.level)$power.0}}
-  if(sgpval==1) {power = function(x) {sg.power(true = x, null.lo, null.hi, std.err, interval.type, interval.level)$power.1}}
+  if(sgpval==0) {power = function(x) {sgpower(true = x, null.lo=null.lo, null.hi=null.hi, std.err=std.err, interval.type=interval.type, interval.level=interval.level)$power.alt}}
+  if(sgpval==1) {power = function(x) {sgpower(true = x, null.lo, null.hi, std.err, interval.type, interval.level)$power.null}}
     # power(x) = P(SGPV=`sgpval` | theta = x)
       # if `sgpval`=0, power (probability) to get SGPV=0 (Blume et al. (2018) eq.(S4) for CI/LSI w/ symmetric null)
       # if `sgpval`=1, power (probability) to get SGPV=1 (Blume et al. (2018) eq.(S7) for CI/LSI w/ symmetric null)
