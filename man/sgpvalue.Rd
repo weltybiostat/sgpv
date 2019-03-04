@@ -102,8 +102,8 @@ sgpvalue(est.lo = ci.or[1], est.hi = ci.or[2], null.lo = log(1/1.5), null.hi = l
 \references{
 Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation \emph{p}-values: Improved rigor, reproducibility, & transparency in statistical analyses. \emph{PLoS ONE} 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
 
-Blume JD, Welty VF, Dupont WD, Greevy RA Jr. (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. In press. https://doi.org/10.1080/00031305.2018.1537893
+Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. In press. https://doi.org/10.1080/00031305.2018.1537893
 }
 \seealso{
-\code{\link{fdrisk}}
+\code{\link{fdrisk}, \link{sgpower}}
 }
