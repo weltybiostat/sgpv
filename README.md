@@ -5,7 +5,7 @@ The `sgpv` package contains functions to calculate the second-generation p-value
 
 News
 ----
-Version 0.0.1.0000 coming December 2018!
+Version 0.0.1.0000 coming Spring 2019!
 
 
 Installation
