@@ -105,5 +105,5 @@ Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-genera
 Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. In press. https://doi.org/10.1080/00031305.2018.1537893
 }
 \seealso{
-\code{\link{fdrisk}, \link{sgpower}}
+\code{\link{fdrisk}, \link{sgpower}, \link{plotsgpv}}
 }

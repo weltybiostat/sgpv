@@ -3,10 +3,10 @@
 ##            	Second-Generation p-value rankings
 ##
 ##	Function:	plotsgpv
-##	Version:	1.0
+##	Version:	1.1
 ##
 ##	Author:		Valerie F. Welty and Jeffrey D. Blume
-##	Date:		March 5, 2019
+##	Date:		March 7, 2019
 ################################################################
 #
 #' Second-Generation \emph{p}-value plotting
@@ -42,7 +42,19 @@
 #' @export
 #' @examples
 #'
-#' # Leukemima example here?
+#' # Need leukstats data loaded locally
+#' plotsgpv(est.lo=leuk.stats$ci.lo, est.hi=leuk.stats$ci.hi,
+#'			null.lo=-0.3, null.hi=0.3,
+#'			set.order=order(leuk.stats$p.value),
+#'			x.show=7000,
+#'			plot.axis=c("TRUE","FALSE"),
+#'			null.pt=0, outline.zone=TRUE,
+#'			title.lab="Leukemia Example", y.lab="Fold Change (base 10)",
+#'			x.lab="Classical p-value ranking",
+#'			legend.on=TRUE)
+#' axis(side=2,at=round(log(c(1/1000,1/100,1/10,1/2,1,2,10,100,1000),
+#'		base=10),2),labels=c("1/1000","1/100","1/10","1/2",1,2,10,100,1000),
+#'		las=2)
 #'
 #'
 #' @references
@@ -104,19 +116,19 @@ plotsgpv <- function( est.lo, est.hi, null.lo, null.hi,
 	rect(1, null.lo, x.max, null.hi, col=null.col, border=NA)
 
 	## Intervals where 0<SGPV<1
-	points(x[set.both],t.ci[set.order,1][set.both],cex=int.cex,pch=int.pch,col=int.col[1])
-	points(x[set.both],t.ci[set.order,2][set.both],cex=int.cex,pch=int.pch,col=int.col[1])
-	segments(x[set.both], t.ci[set.order,1][set.both], x[set.both], t.ci[set.order,2][set.both], lty=1, col=int.col[1])
+	points(x[set.both],est.lo[set.order][set.both],cex=int.cex,pch=int.pch,col=int.col[1])
+	points(x[set.both],est.hi[set.order][set.both],cex=int.cex,pch=int.pch,col=int.col[1])
+	segments(x[set.both], est.lo[set.order][set.both], x[set.both], est.hi[set.order][set.both], lty=1, col=int.col[1])
 
 	## Intervals where SGPV==1
-	points(x[set.in],t.ci[set.order,1][set.in],cex=int.cex,pch=int.pch,col=int.col[3])
-	points(x[set.in],t.ci[set.order,2][set.in],cex=int.cex,pch=int.pch,col=int.col[3])
-	segments(x[set.in], t.ci[set.order,1][set.in], x[set.in], t.ci[set.order,2][set.in], lty=1, col=int.col[3])
+	points(x[set.in],est.lo[set.order][set.in],cex=int.cex,pch=int.pch,col=int.col[3])
+	points(x[set.in],est.hi[set.order][set.in],cex=int.cex,pch=int.pch,col=int.col[3])
+	segments(x[set.in], est.lo[set.order][set.in], x[set.in], est.hi[set.order][set.in], lty=1, col=int.col[3])
 
 	## Intervals where SGPV==0
-	points(x[set.out],t.ci[set.order,1][set.out],cex=int.cex,pch=int.pch,col=int.col[2])
-	points(x[set.out],t.ci[set.order,2][set.out],cex=int.cex,pch=int.pch,col=int.col[2])
-	segments(x[set.out], t.ci[set.order,1][set.out], x[set.out], t.ci[set.order,2][set.out], lty=1, col=int.col[2])
+	points(x[set.out],est.lo[set.order][set.out],cex=int.cex,pch=int.pch,col=int.col[2])
+	points(x[set.out],est.hi[set.order][set.out],cex=int.cex,pch=int.pch,col=int.col[2])
+	segments(x[set.out], est.lo[set.order][set.out], x[set.out], est.hi[set.order][set.out], lty=1, col=int.col[2])
 
 	## Detail indifference zone
 	abline(h=null.pt,lty=2)
