@@ -32,7 +32,7 @@
 #' If \code{TruncNormal} is used for \code{null.weights}, then the distribution used is a truncated Normal distribution with mean equal to the midpoint of \code{null.space}, and standard deviation equal to \code{std.err}, truncated to the support of \code{null.space}. If \code{TruncNormal} is used for \code{alt.weights}, then the distribution used is a truncated Normal distribution with mean equal to the midpoint of \code{alt.space}, and standard deviation equal to \code{std.err}, truncated to the support of \code{alt.space}. Further customization of these parameters for the truncated Normal are currently not possible, although they may be implemented in future versions.
 #'
 #' @return Numeric scalar representing the False discovery risk (FDR) or false confirmation risk (FCR) for the observed second-generation \emph{p}-value. If \code{sgpval} = \eqn{0}, the function returns false discovery risk (FDR). If \code{sgpval} = \eqn{1}, the function returns false confirmation risk (FCR).
-#' @seealso \code{\link{sgpvalue}, \link{sgpower}}
+#' @seealso \code{\link{sgpvalue}, \link{sgpower}, \link{plotsgpv}}
 #' @keywords
 #' @export
 #' @examples

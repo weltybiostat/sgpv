@@ -30,7 +30,7 @@
 #' \item{\code{p.delta}}{Vector of second-generation p-values}
 #' \item{\code{delta.gap}}{Vector of delta-gaps. Reported as \code{NA} when the corresponding second-generation p-value is not zero.}
 #' }
-#' @seealso \code{\link{fdrisk}, \link{sgpower}}
+#' @seealso \code{\link{fdrisk}, \link{sgpower}, \link{plotsgpv}}
 #' @keywords
 #' @export
 #' @examples

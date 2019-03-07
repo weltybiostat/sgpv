@@ -27,7 +27,7 @@
 #' \item{\code{power.null}}{Probability of SGPV = 1 calculated assuming the parameter is equal to \code{true}. That is, \code{power.null}\eqn{ = P(SGPV = 1 | \theta = } \code{true}).}
 #' \item{\code{`type I error summaries`}}{Named vector that includes different ways the type I error may be summarized for an interval null hypothesis. \code{min} is the minimum type I error over the range (\code{null.lo}, \code{null.hi}), which occurs at the midpoint of (\code{null.lo}, \code{null.hi}). \code{max} is the maximum type I error over the range (\code{null.lo}, \code{null.hi}), which occurs at the boundaries of the null hypothesis, \code{null.lo} and \code{null.hi}. \code{mean} is the average type I error (unweighted) over the range (\code{null.lo}, \code{null.hi}). If \eqn{0} is included in the null hypothesis region, then \code{`type I error summaries`} also contains \code{at 0}, the type I error calculated assuming the true parameter value \eqn{\theta} is equal to \eqn{0}.}
 #' }
-#' @seealso \code{\link{fdrisk}, \link{sgpvalue}}
+#' @seealso \code{\link{fdrisk}, \link{sgpvalue}, \link{plotsgpv}}
 #' @keywords
 #' @export
 #' @examples
