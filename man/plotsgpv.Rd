@@ -57,10 +57,11 @@ Interval estimates with infinite or undefined limits should be manually truncate
 }
 \examples{
 
-# Need leukstats data loaded locally
-plotsgpv(est.lo=leuk.stats$ci.lo, est.hi=leuk.stats$ci.hi,
+# Use leukstats data
+data(leukstats)
+plotsgpv(est.lo=leukstats$ci.lo, est.hi=leukstats$ci.hi,
 		null.lo=-0.3, null.hi=0.3,
-		set.order=order(leuk.stats$p.value),
+		set.order=order(leukstats$p.value),
 		x.show=7000,
 		plot.axis=c("TRUE","FALSE"),
 		null.pt=0, outline.zone=TRUE,
