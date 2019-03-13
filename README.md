@@ -1,7 +1,7 @@
 sgpv
 ========
 
-The `sgpv` package contains functions to calculate the second-generation p-value, its associated delta-gap, and the false discovery risk or false confirmation risk for an alternative or null finding (sgpv = 0 or sgpv = 1) when assumptions are made about the distributions over the null and alternative spaces.
+The `sgpv` package contains functions to calculate the second-generation p-value in R, its associated delta-gap, and the false discovery risk or false confirmation risk for an alternative or null finding (sgpv = 0 or sgpv = 1) when assumptions are made about the distributions over the null and alternative spaces.
 
 News
 ----
