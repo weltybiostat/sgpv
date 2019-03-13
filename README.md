@@ -5,8 +5,7 @@ The `sgpv` package contains functions to calculate the second-generation p-value
 
 News
 ----
-Version 0.0.1.0000 coming Spring 2019!
-
+Version 0.0.1.0000 now includes a function to plot the intervals colored by SGPV status, as found in Blume et al. (2018) and Blume et al. (2019)
 
 Installation
 ------------
@@ -33,3 +32,15 @@ sgpvalue(est.lo = lb, est.hi = ub, null.lo = log(1/1.1), null.hi = log(1.1))
 # $delta.gap
 # [1]       NA 1.752741       NA
 ```
+
+References
+----------
+
+Paper appearing in the upcoming special issue of The American Statisician:
+
+Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation p-values. The American Statistician. In press. https://doi.org/10.1080/00031305.2018.1537893
+
+Original proposal appearing in PLoS ONE:
+
+Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation p-values: Improved rigor, reproducibility, & transparency in statistical analyses. PLoS ONE 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
+
