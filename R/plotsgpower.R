@@ -64,6 +64,7 @@
 #'
 #' Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation \emph{p}-values: Improved rigor, reproducibility, & transparency in statistical analyses. \emph{PLoS ONE} 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
 #'
+#' @importFrom graphics lines clip
 #'
 
 plotsgpower <-  function (null.lo, null.hi, std.err,

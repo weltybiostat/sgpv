@@ -96,7 +96,7 @@
 #'
 #'
 #' @importFrom grDevices rgb
-#' @importFrom graphics abline axis legend plot points rect segments
+#' @importFrom graphics abline axis legend plot points rect segments par mtext text
 
 
 plotman <- function( est.lo, est.hi, null.lo, null.hi,
