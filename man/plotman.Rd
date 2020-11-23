@@ -73,7 +73,8 @@ Use \code{type} and \code{p.values} to provide the \eqn{-log10(p-values)} for th
 #  Use leukstats data
 data(leukstats)
 
-# ID number on the x-axis, delta-gap on the y-axis, using an interval null hypothesis of (-0.3, 0.3) for the log mean difference in expression levels (fold change).
+# ID number on the x-axis, delta-gap on the y-axis, using an interval null hypothesis of
+# (-0.3, 0.3) for the log mean difference in expression levels (fold change).
 plotman(est.lo=leukstats$ci.lo, est.hi=leukstats$ci.hi,
        null.lo=-0.3, null.hi=0.3,
        set.order=NA,
@@ -85,7 +86,9 @@ plotman(est.lo=leukstats$ci.lo, est.hi=leukstats$ci.hi,
        x.lab="Position (ID)",
        legend.on=TRUE)
 
-# ID number on the x-axis, -log10(classical p-value) on the y-axis, using an interval null hypothesis of (-0.3, 0.3) for the log mean difference in expression levels (fold change).
+# ID number on the x-axis, -log10(classical p-value) on the y-axis, using an interval
+# null hypothesis of (-0.3, 0.3) for the log mean difference in expression levels
+# (fold change).
 plotman(est.lo=leukstats$ci.lo, est.hi=leukstats$ci.hi,
        null.lo=-0.3, null.hi=0.3,
        set.order=NA,
@@ -98,7 +101,9 @@ plotman(est.lo=leukstats$ci.lo, est.hi=leukstats$ci.hi,
        x.lab="Position (ID)",
        legend.on=TRUE)
 
-# Second-generation p-value (SGPV) on the x-axis, -log10(classical p-value) on the y-axis, using an interval null hypothesis of (-0.3, 0.3) for the log mean difference in expression levels (fold change).
+# Second-generation p-value (SGPV) on the x-axis, -log10(classical p-value) on the
+# y-axis, using an interval null hypothesis of (-0.3, 0.3) for the log mean difference
+# in expression levels (fold change).
 plotman(est.lo=leukstats$ci.lo, est.hi=leukstats$ci.hi,
        null.lo=-0.3, null.hi=0.3,
        set.order="sgpv",
