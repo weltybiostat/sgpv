@@ -2,10 +2,9 @@
 % Please edit documentation in R/sgpower.R
 \name{sgpower}
 \alias{sgpower}
-\title{Power functions for Second-Generation p-values.}
+\title{Power functions for Second-Generation p-Values}
 \usage{
-sgpower(true, null.lo, null.hi, std.err = 1, interval.type,
-  interval.level)
+sgpower(true, null.lo, null.hi, std.err = 1, interval.type, interval.level)
 }
 \arguments{
 \item{true}{The true value for the parameter of interest at which to calculate power. Note that this is on the absolute scale of the parameter, and not the standard deviation or standard error scale.}
@@ -30,25 +29,28 @@ A list containing the following components:
 }
 }
 \description{
-Power functions for Second-Generation p-values.
+Calculate power and type I error values from significance testing based on second-generation p-values as the inferential metric.
 }
 \examples{
-sgpower(true=2, null.lo=-1, null.hi=1, std.err=1, interval.type='confidence', 'interval.level'=0.05)
+sgpower(true=2, null.lo=-1, null.hi=1, std.err=1, interval.type='confidence',
+ 'interval.level'=0.05)
 
-sgpower(true=0, null.lo=-1, null.hi=1, std.err=1, interval.type='confidence', 'interval.level'=0.05)
+sgpower(true=0, null.lo=-1, null.hi=1, std.err=1, interval.type='confidence',
+ 'interval.level'=0.05)
 
 # plot the power curve
 sigma = 5
 n = 20
 theta = seq(-10, 10, by=0.1)
-power = sgpower(true=theta, null.lo=-1, null.hi=1, std.err=sigma/sqrt(n), interval.type='confidence', 'interval.level'=0.05)$power.alt
+power = sgpower(true=theta, null.lo=-1, null.hi=1, std.err=sigma/sqrt(n),
+ interval.type='confidence', interval.level=0.05)$power.alt
 plot(theta, power, type='l', ylab='power')
 
 }
 \references{
-Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation \emph{p}-values: Improved rigor, reproducibility, & transparency in statistical analyses. \emph{PLoS ONE} 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
+Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. 73:sup1, 157-167, DOI: https://doi.org/10.1080/00031305.2018.1537893
 
-Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. In press. https://doi.org/10.1080/00031305.2018.1537893
+Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation \emph{p}-values: Improved rigor, reproducibility, & transparency in statistical analyses. \emph{PLoS ONE} 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
 }
 \seealso{
 \code{\link{fdrisk}, \link{sgpvalue}, \link{plotsgpv}}

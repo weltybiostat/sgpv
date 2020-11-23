@@ -4,7 +4,9 @@
 \name{leukstats}
 \alias{leukstats}
 \title{Test Statistics from Gloub (1999) Leukemia data set}
-\format{An object of class \code{data.frame}. Includes the following: t-statistic (\code{t.stat}), p-value (\code{p.value}), CI lower limit (\code{ci.lo}), CI upper limit (\code{ci.hi}), estimate (\code{estimate}), standard error (\code{se}).}
+\format{
+An object of class \code{data.frame}. Includes the following: t-statistic (\code{t.stat}), p-value (\code{p.value}), CI lower limit (\code{ci.lo}), CI upper limit (\code{ci.hi}), estimate (\code{estimate}), standard error (\code{se}).
+}
 \source{
 https://github.com/ramhiser/datamicroarray/wiki/Golub-(1999)
 }

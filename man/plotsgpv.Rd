@@ -2,15 +2,27 @@
 % Please edit documentation in R/plotsgpv.R
 \name{plotsgpv}
 \alias{plotsgpv}
-\title{Second-Generation \emph{p}-value plotting}
+\title{Second-Generation p-Value Plotting}
 \usage{
-plotsgpv(est.lo, est.hi, null.lo, null.hi, set.order = "sgpv",
-  x.show = NA, null.col = rgb(208, 216, 232, max = 255),
+plotsgpv(
+  est.lo,
+  est.hi,
+  null.lo,
+  null.hi,
+  set.order = "sgpv",
+  x.show = NA,
+  null.col = rgb(208, 216, 232, maxColorValue = 255),
   int.col = c("cornflowerblue", "firebrick3", "darkslateblue"),
-  int.pch = NA, int.cex = 0.4, plot.axis = c(TRUE, TRUE),
-  null.pt = NA, outline.zone = TRUE, title.lab = "Title",
-  x.lab = "Position (by set.order)", y.lab = "Outcome label",
-  legend.on = TRUE)
+  int.pch = NA,
+  int.cex = 0.4,
+  plot.axis = c(TRUE, TRUE),
+  null.pt = NA,
+  outline.zone = TRUE,
+  title.lab = "Title",
+  x.lab = "Position (by set.order)",
+  y.lab = "Outcome label",
+  legend.on = TRUE
+)
 }
 \arguments{
 \item{est.lo}{A numeric vector of lower bounds of interval estimates. Values must be finite for interval to be drawn. Must be of same length as \code{est.hi}.}
@@ -25,7 +37,7 @@ plotsgpv(est.lo, est.hi, null.lo, null.hi, set.order = "sgpv",
 
 \item{x.show}{A scalar representing the maximum ranking on the x-axis that is displayed. Default is to display all intervals.}
 
-\item{null.col}{Coloring of the null interval (indifference zone). Default is Hawkes Blue: \code{rgb(208,216,232,max=255)}.}
+\item{null.col}{Coloring of the null interval (indifference zone). Default is Hawkes Blue: \code{rgb(208,216,232,maxColorValue=255)}.}
 
 \item{int.col}{Coloring of the intervals according to SGPV ranking. Default is \code{c("cornflowerblue","firebrick3","darkslateblue")} for SGPVs of \eqn{0}, in \eqn{(0,1)}, and \eqn{1} respectively.}
 
@@ -75,9 +87,9 @@ axis(side=2,at=round(log(c(1/1000,1/100,1/10,1/2,1,2,10,100,1000),
 
 }
 \references{
-Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation \emph{p}-values: Improved rigor, reproducibility, & transparency in statistical analyses. \emph{PLoS ONE} 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
+Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. 73:sup1, 157-167, DOI: https://doi.org/10.1080/00031305.2018.1537893
 
-Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. In press. https://doi.org/10.1080/00031305.2018.1537893
+Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation \emph{p}-values: Improved rigor, reproducibility, & transparency in statistical analyses. \emph{PLoS ONE} 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
 }
 \seealso{
 \code{\link{sgpvalue}, \link{sgpower}, \link{fdrisk}}
