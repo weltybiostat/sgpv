@@ -1,16 +1,19 @@
 Package: sgpv
-Title: R package for calculating second-generation p-values and associated measures. 
-Date: 2018-12-06
-Version: 0.0.0.9200
+Title: Calculate Second-Generation p-Values and Associated Measures
+Date: 2020-11-23
+Version: 1.1.0
 Authors@R: c(
     person("Valerie", "Welty", email = "valerie.welty@vanderbilt.edu", role = c("aut", "cre")),
+    person("Rebecca", "Irlmeier", email = "rebecca.t.irlmeier@vanderbilt.edu", role = "aut"),
     person("Thomas", "Stewart", email = "thomas.stewart@vanderbilt.edu", role = "aut"),
     person("Robert", "Greevy, Jr.", email = "robert.greevy@vanderbilt.edu", role = "aut"),
     person("Lucy", "D'Agostino McGowan", email = "ld.mcgowan@jhu.edu", role = "aut"),
     person("Jeffrey", "Blume", email = "j.blume@vanderbilt.edu", role = c("aut"))
     )
+Maintainer: Valerie Welty <valerie.welty@vanderbilt.edu>
 Depends: R (>= 3.3.3)
 License: MIT + file LICENSE
+Description: Computation of second-generation p-values as described in Blume et al. (2018) <doi:10.1371/journal.pone.0188299> and Blume et al. (2019) <doi:10.1080/00031305.2018.1537893>. There are additional functions which provide power and type I error calculations, create graphs (particularly suited for large-scale inference usage), and a function to estimate false discovery rates based on second-generation p-value inference. 
 Encoding: UTF-8
 LazyData: false
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
