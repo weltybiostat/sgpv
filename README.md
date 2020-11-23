@@ -47,8 +47,9 @@ References
 
 Introductory paper appearing in the special issue of The American Statisician:
 
-Jeffrey D. Blume, Robert A. Greevy, Valerie F. Welty, Jeffrey R. Smith & William D. Dupont (2019) An Introduction to Second-Generation p-Values, The American Statistician, 73:sup1, 157-167, DOI: 10.1080/00031305.2018.1537893
+Jeffrey D. Blume, Robert A. Greevy, Valerie F. Welty, Jeffrey R. Smith & William D. Dupont (2019) An Introduction to Second-Generation p-Values, The American Statistician, 73:sup1, 157-167, https://doi.org/10.1080/00031305.2018.1537893 
 
 Original proposal appearing in PLoS ONE:
 
 Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation p-values: Improved rigor, reproducibility, & transparency in statistical analyses. PLoS ONE 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
+
