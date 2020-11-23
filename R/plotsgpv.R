@@ -9,7 +9,7 @@
 ##	Date:		March 7, 2019
 ################################################################
 #
-#' Second-Generation \emph{p}-value plotting
+#' Second-Generation p-Value Plotting
 #'
 #' @description This function displays user supplied interval estimates (support intervals, confidence intervals, credible intervals, etc.) according to its associated second-generation \emph{p}-value ranking.
 #'
@@ -19,7 +19,7 @@
 #' @param null.hi A scalar representing the upper bound of null interval (indifference zone). Value must be finite.
 #' @param set.order A numeric vector giving the desired order along the x-axis. If \code{set.order} is set to \code{sgpv}, the second-generation \emph{p}-value ranking is used. If \code{set.order} is set to \code{NA}, the original input ordering is used.
 #' @param x.show A scalar representing the maximum ranking on the x-axis that is displayed. Default is to display all intervals.
-#' @param null.col Coloring of the null interval (indifference zone). Default is Hawkes Blue: \code{rgb(208,216,232,max=255)}.
+#' @param null.col Coloring of the null interval (indifference zone). Default is Hawkes Blue: \code{rgb(208,216,232,maxColorValue=255)}.
 #' @param int.col Coloring of the intervals according to SGPV ranking. Default is \code{c("cornflowerblue","firebrick3","darkslateblue")} for SGPVs of \eqn{0}, in \eqn{(0,1)}, and \eqn{1} respectively.
 #' @param int.pch Plotting symbol for interval endpoints. Default is \code{NA}, no symbol. Use \code{16} for small endpoints.
 #' @param int.cex Size of plotting symbol for interval endpoints. Default is \eqn{0.4}.
@@ -38,7 +38,6 @@
 #' Interval estimates with infinite or undefined limits should be manually truncated or avoided altogether. While the sgpvalue funciton will handle these cases, this function assumes they have been truncated or removed because there is no standard way to plot them.
 #'
 #' @seealso \code{\link{sgpvalue}, \link{sgpower}, \link{fdrisk}}
-#' @keywords
 #' @export
 #' @examples
 #'
@@ -59,13 +58,18 @@
 #'
 #'
 #' @references
+#' Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. 73:sup1, 157-167, DOI: https://doi.org/10.1080/00031305.2018.1537893
+#'
 #' Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation \emph{p}-values: Improved rigor, reproducibility, & transparency in statistical analyses. \emph{PLoS ONE} 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
 #'
-#' Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. In press. https://doi.org/10.1080/00031305.2018.1537893
 #'
+#'
+#' @importFrom grDevices rgb
+#' @importFrom graphics abline axis legend plot points rect segments
+
 
 plotsgpv <- function( est.lo, est.hi, null.lo, null.hi,
-		set.order="sgpv", x.show=NA, null.col=rgb(208,216,232,max=255),
+		set.order="sgpv", x.show=NA, null.col=rgb(208,216,232,maxColorValue=255),
 		int.col=c("cornflowerblue","firebrick3","darkslateblue"),
 		int.pch=NA, int.cex=0.4, plot.axis=c(TRUE,TRUE),
 		null.pt=NA, outline.zone=TRUE,

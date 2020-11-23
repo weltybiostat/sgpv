@@ -8,7 +8,7 @@
 ##	Date:		November 1, 2018
 ################################################################
 #
-#' Second-Generation p-values
+#' Second-Generation p-Values
 #'
 #' @description This function computes the second-generation \emph{p}-value (SGPV) and its associated delta gaps, as introduced in Blume et al. (2018).
 #'
@@ -31,7 +31,6 @@
 #' \item{\code{delta.gap}}{Vector of delta-gaps. Reported as \code{NA} when the corresponding second-generation p-value is not zero.}
 #' }
 #' @seealso \code{\link{fdrisk}, \link{sgpower}, \link{plotsgpv}}
-#' @keywords
 #' @export
 #' @examples
 #'
@@ -40,35 +39,18 @@
 #' ub <- c(log(1.8), log(1.8), log(1.02))
 #' sgpv <- sgpvalue(est.lo = lb, est.hi = ub, null.lo = log(1/1.1), null.hi = log(1.1))
 #' sgpv$p.delta
-#' [1] 0.1220227 0.0000000 1.0000000
+#'
 #' sgpv$delta.gap
-#' [1]       NA 1.752741       NA
 #'
 #' ## Works with infinte interval bounds
 #' sgpvalue(est.lo = log(1.3), est.hi = Inf, null.lo = -Inf, null.hi = log(1.1))
 #'
-#' $p.delta
-#' [1] 0
-#' $delta.gap
-#' [1] 0.1670541
-#'
-#' Warning message:
-#' In sgpvalue(est.lo = log(1.3), est.hi = Inf, null.lo = -Inf, null.hi = log(1.1))
-#' At least one interval has infinite length
 #'
 #' sgpvalue(est.lo = log(1.05), est.hi = Inf, null.lo = -Inf, null.hi = log(1.1))
 #'
-#' $p.delta
-#' [1] 1e-05
-#' $delta.gap
-#' [1] NA
 #'
-#' Warning message:
-#' In sgpvalue(est.lo = log(1.05), est.hi = Inf, null.lo = -Inf, null.hi = log(1.1)) :
-#' At least one interval has infinite length
 #'
 #' ## Example t-test with simulated data
-#' ## (not run)
 #' set.seed(1776)
 #' x1 <- rnorm(15,mean=0,sd=2) ; x2 <- rnorm(15,mean=3,sd=2)
 #' ci <- t.test(x1,x2)$conf.int[1:2]
@@ -95,9 +77,9 @@
 #'
 #'
 #' @references
-#' Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation \emph{p}-values: Improved rigor, reproducibility, & transparency in statistical analyses. \emph{PLoS ONE} 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
+#' Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. 73:sup1, 157-167, DOI: https://doi.org/10.1080/00031305.2018.1537893
 #'
-#' Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. In press. https://doi.org/10.1080/00031305.2018.1537893
+#' Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation \emph{p}-values: Improved rigor, reproducibility, & transparency in statistical analyses. \emph{PLoS ONE} 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
 #'
 
 

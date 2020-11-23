@@ -9,7 +9,7 @@
 ##	Date:		December 6, 2018
 ################################################################
 #
-#' False Discovery Risk for Second-Generation p-values
+#' False Discovery Risk for Second-Generation p-Values
 #'
 #' @description This function computes the false discovery risk (sometimes called the "empirical bayes FDR") for a second-generation \emph{p}-value of 0, or the false confirmation risk for a second-generation \emph{p}-value of 1.
 #'
@@ -32,37 +32,50 @@
 #' If \code{TruncNormal} is used for \code{null.weights}, then the distribution used is a truncated Normal distribution with mean equal to the midpoint of \code{null.space}, and standard deviation equal to \code{std.err}, truncated to the support of \code{null.space}. If \code{TruncNormal} is used for \code{alt.weights}, then the distribution used is a truncated Normal distribution with mean equal to the midpoint of \code{alt.space}, and standard deviation equal to \code{std.err}, truncated to the support of \code{alt.space}. Further customization of these parameters for the truncated Normal are currently not possible, although they may be implemented in future versions.
 #'
 #' @return Numeric scalar representing the False discovery risk (FDR) or false confirmation risk (FCR) for the observed second-generation \emph{p}-value. If \code{sgpval} = \eqn{0}, the function returns false discovery risk (FDR). If \code{sgpval} = \eqn{1}, the function returns false confirmation risk (FCR).
-#' @seealso \code{\link{sgpvalue}, \link{sgpower}, \link{plotsgpv}}
-#' @keywords
+#' @seealso \code{\link{sgpvalue}, \link{sgpower}, \link{plotsgpv}, FDRestimation::p.fdr}
 #' @export
 #' @examples
 #'
 #' # false discovery risk with 95% confidence level
-#' fdrisk(sgpval = 0,  null.lo = log(1/1.1), null.hi = log(1.1),  std.err = 0.8,  null.weights = 'Uniform',  null.space = c(log(1/1.1), log(1.1)),  alt.weights = 'Uniform',  alt.space = 2 + c(-1,1)*qnorm(1-0.05/2)*0.8,  interval.type = 'confidence',  interval.level = 0.05)
-#' [1] 0.059499
+#' fdrisk(sgpval = 0,  null.lo = log(1/1.1), null.hi = log(1.1),  std.err = 0.8,
+#'   null.weights = 'Uniform', null.space = c(log(1/1.1), log(1.1)),
+#'   alt.weights = 'Uniform',  alt.space = 2 + c(-1,1)*qnorm(1-0.05/2)*0.8,
+#'   interval.type = 'confidence',  interval.level = 0.05)
 #'
 #' # false discovery risk with 1/8 likelihood support level
-#' fdrisk(sgpval = 0,  null.lo = log(1/1.1), null.hi = log(1.1),  std.err = 0.8,  null.weights = 'Point',  null.space = 0,  alt.weights = 'Uniform',  alt.space = 2 + c(-1,1)*qnorm(1-0.041/2)*0.8,  interval.type = 'likelihood',  interval.level = 1/8)
-#' [1] 0.050555
+#' fdrisk(sgpval = 0,  null.lo = log(1/1.1), null.hi = log(1.1),  std.err = 0.8,
+#'   null.weights = 'Point', null.space = 0,  alt.weights = 'Uniform',
+#'   alt.space = 2 + c(-1,1)*qnorm(1-0.041/2)*0.8,
+#'   interval.type = 'likelihood',  interval.level = 1/8)
 #'
 #' ## with truncated normal weighting distribution
-#' fdrisk(sgpval = 0,  null.lo = log(1/1.1), null.hi = log(1.1),  std.err = 0.8,  null.weights = 'Point',  null.space = 0,  alt.weights = 'TruncNormal',  alt.space = 2 + c(-1,1)*qnorm(1-0.041/2)*0.8,  interval.type = 'likelihood',  interval.level = 1/8)
-#' [1] 0.049026
+#' fdrisk(sgpval = 0,  null.lo = log(1/1.1), null.hi = log(1.1),  std.err = 0.8,
+#'   null.weights = 'Point', null.space = 0,  alt.weights = 'TruncNormal',
+#'   alt.space = 2 + c(-1,1)*qnorm(1-0.041/2)*0.8,
+#'   interval.type = 'likelihood',  interval.level = 1/8)
 #'
 #' # false discovery risk with LSI and wider null hypothesis
-#' fdrisk(sgpval = 0,  null.lo = log(1/1.5), null.hi = log(1.5),  std.err = 0.8,  null.weights = 'Point',  null.space = 0,  alt.weights = 'Uniform',  alt.space = 2.5 + c(-1,1)*qnorm(1-0.041/2)*0.8,  interval.type = 'likelihood',  interval.level = 1/8)
-#' [1] 0.016883
+#' fdrisk(sgpval = 0,  null.lo = log(1/1.5), null.hi = log(1.5),  std.err = 0.8,
+#'   null.weights = 'Point', null.space = 0,  alt.weights = 'Uniform',
+#'   alt.space = 2.5 + c(-1,1)*qnorm(1-0.041/2)*0.8,
+#'   interval.type = 'likelihood',  interval.level = 1/8)
 #'
 #' # false confirmation risk example
-#' fdrisk(sgpval = 1,  null.lo = log(1/1.5), null.hi = log(1.5),  std.err = 0.15,  null.weights = 'Uniform',  null.space = 0.01 + c(-1,1)*qnorm(1-0.041/2)*0.15,  alt.weights = 'Uniform',  alt.space = c(log(1.5), 1.25*log(1.5)),  interval.type = 'likelihood',  interval.level = 1/8)
-#' [1] 0.030595
+#' fdrisk(sgpval = 1,  null.lo = log(1/1.5), null.hi = log(1.5),  std.err = 0.15,
+#'   null.weights = 'Uniform', null.space = 0.01 + c(-1,1)*qnorm(1-0.041/2)*0.15,
+#'   alt.weights = 'Uniform',  alt.space = c(log(1.5), 1.25*log(1.5)),
+#'   interval.type = 'likelihood',  interval.level = 1/8)
 #'
 #'
 #' @references
+#' Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. 73:sup1, 157-167, DOI: https://doi.org/10.1080/00031305.2018.1537893
+#'
 #' Blume JD, D’Agostino McGowan L, Dupont WD, Greevy RA Jr. (2018). Second-generation \emph{p}-values: Improved rigor, reproducibility, & transparency in statistical analyses. \emph{PLoS ONE} 13(3): e0188299. https://doi.org/10.1371/journal.pone.0188299
 #'
-#' Blume JD, Greevy RA Jr., Welty VF, Smith JR, Dupont WD (2019). An Introduction to Second-generation \emph{p}-values. \emph{The American Statistician}. In press. https://doi.org/10.1080/00031305.2018.1537893
 #'
+#'
+#' @importFrom stats dnorm integrate pnorm qnorm
+
 
 
 fdrisk <- function(sgpval=0, null.lo, null.hi, std.err,
